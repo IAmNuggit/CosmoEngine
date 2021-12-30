@@ -1,0 +1,3 @@
+Performance Testing Document
+ 
+Time Taken to start program: 4289(Milliseconds)
