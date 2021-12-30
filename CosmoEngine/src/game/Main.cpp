@@ -29,23 +29,18 @@
 #include <glm\gtc\type_ptr.hpp>
 
 //////Header files 
-#include "CommonValues.h"
-#include "Window.h"
-#include "Mesh.h"
-#include "Shader.h"
-#include "Camera.h"
-#include "Texture.h"
-#include "DirectionalLight.h"
-#include "PointLight.h"
-#include "SpotLight.h"
-#include "Material.h"
-#include "Model.h"
+#include "..\GameEngine\CommonValues.h"
+#include "..\GameEngine\Window.h"
+#include "..\GameEngine\Mesh.h"
+#include "..\GameEngine\Shader.h"
+#include "..\GameEngine\Camera.h"
+#include "..\GameEngine\Texture.h"
+#include "..\GameEngine\DirectionalLight.h"
+#include "..\GameEngine\PointLight.h"
+#include "..\GameEngine\SpotLight.h"
+#include "..\GameEngine\Material.h"
+#include "..\GameEngine\Model.h"
 
-
-//Variables
-const float toRad = 3.14159265f / 180.0f;
-float F1Angle = 0.0f;
-float AircraftAngle = 0.0f;
 
 GLuint globalProjection = 0, globalModel = 0, globalView = 0, globalEyePosition = 0,
 globalSpecularIntensity = 0, globalShininess = 0, globalOmniLightPos = 0, globalFarPlane = 0;
@@ -71,8 +66,13 @@ DirectionalLight sceneLight;
 PointLight pointLights[MAX_POINT_LIGHTS];
 SpotLight spotLights[MAX_SPOT_LIGHTS];
 
+//Variables
+const float toRad = 3.14159265f / 180.0f;
+float F1Angle = 0.0f;
+float AircraftAngle = 0.0f;
 unsigned int pointLightCount = 0;
 unsigned int spotLightCount = 0;
+
 //Time
 GLfloat updateTime = 0.0f;
 GLfloat lastTime = 0.0f;
