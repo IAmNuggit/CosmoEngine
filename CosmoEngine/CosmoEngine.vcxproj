@@ -76,12 +76,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\include;$(SolutionDir)\CosmoEngine\Contrib\GLFW\include;$(SolutionDir)\CosmoEngine\Contrib\GLM;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\include;$(SolutionDir)\CosmoEngine\Contrib\GLFW\include;$(SolutionDir)\CosmoEngine\Contrib\GLM;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\include;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\lib\Release\Win32;$(SolutionDir)\CosmoEngine\Contrib\GLFW\lib-vc2017;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\lib\Release\Win32;$(SolutionDir)\CosmoEngine\Contrib\GLFW\lib-vc2017;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\lib;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\lib\Win32-visualStudio;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -106,14 +106,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\include;$(SolutionDir)\CosmoEngine\Contrib\GLFW\include;$(SolutionDir)\CosmoEngine\Contrib\GLM;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\include;$(SolutionDir)\CosmoEngine\Contrib\GLFW\include;$(SolutionDir)\CosmoEngine\Contrib\GLM;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\include;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\lib\Release\Win32;$(SolutionDir)\CosmoEngine\Contrib\GLFW\lib-vc2017;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\lib\Release\Win32;$(SolutionDir)\CosmoEngine\Contrib\GLFW\lib-vc2017;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\lib;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\lib\Win32-visualStudio;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
