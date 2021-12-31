@@ -333,17 +333,23 @@ void RenderPass(glm::mat4 projectionMatrix, glm::mat4 viewMatrix)
 ///Also contains a while loops which loops until the window is closed.
 int main()
 {
+	// start the sound engine with default parameters
+	ISoundEngine* SoundEngine = createIrrKlangDevice();
+
+	if (!SoundEngine)
+		return 0; // error starting up the engine
+
+	ISound* music = SoundEngine->play3D("media/GameMusic.mp3",
+		vec3df(0, 0, 0), true, false, true);
 
 	// Get time
 	std::chrono::steady_clock::time_point time1 =
 		std::chrono::high_resolution_clock::now();
-
 	//1366, 768
 	//initialise window
 	currentWindow = Window(1920, 1080); // 1280, 1024 or 1024, 768
 	currentWindow.Initialise();
 
-	SoundEngine->play2D("media/ophelia.mp3");
 
 	CreateObjects();
 	CreateShaders();
