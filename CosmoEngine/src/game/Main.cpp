@@ -19,9 +19,6 @@
 using namespace irrklang;
 #pragma comment(lib, "irrKlang.lib") // link with irrKlang.dll
 
-// start up the engine
-irrklang::ISoundEngine* engine = irrklang::createIrrKlangDevice();
-
 //Input/ Output files
 #include <iostream>
 #include <fstream>
@@ -94,23 +91,9 @@ static const char* vertexShader = "Shaders/shader.vert";
 // Fragment Shader filepath
 static const char* fragmentShader = "Shaders/shader.frag";
 
-int Audio()
-{
-	// start the sound engine with default parameters
-	ISoundEngine* engine = createIrrKlangDevice();
+// start the sound engine with default parameters
+ISoundEngine *SoundEngine = createIrrKlangDevice();
 
-	if (!engine)
-	{
-		printf("Could not startup engine\n");
-		return 0; // error starting up the engine
-	}
-
-	// To play a sound, we only to call play2D(). The second parameter
-	// tells the engine to play it looped.
-
-	// play some sound stream, looped
-	engine->play2D("Contrib/irrKlang-1.6.0/media/ophelia.mp3", true);
-}
 ///Brief desc.
 ///
 ///This function contains omni and directional fragment and vertex shader file locations 
@@ -360,6 +343,7 @@ int main()
 	currentWindow = Window(1920, 1080); // 1280, 1024 or 1024, 768
 	currentWindow.Initialise();
 
+	SoundEngine->play2D("media/ophelia.mp3");
 
 	CreateObjects();
 	CreateShaders();
@@ -491,7 +475,7 @@ int main()
 		// swap buffers and poll IO events
 		currentWindow.swapBuffers();
 	}
-	engine->drop(); // delete engine
+	SoundEngine->drop(); // delete engine
 
 	std::chrono::milliseconds milliseconds =
 		std::chrono::duration_cast<std::chrono::milliseconds>(time2 - time1);
