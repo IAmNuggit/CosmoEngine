@@ -96,6 +96,37 @@ void Camera::keyControl(bool* keys, GLfloat updateTime)
 
 ///Brief desc.
 ///
+///Manages key presses (WASD) which moves the camera
+///This function is called from Main.cpp and is updated until the mainwindow is closed
+///@param a Value of key pressed from the user. Is gained from Window::handleKeys()
+///@param b Duration of key press, while key is press continue moving camera
+void Camera::GamePadControl(bool keys, GLfloat updateTime)
+{
+	GLfloat velocity = moveS * updateTime;
+
+	if (keys[GLFW_KEY_W])
+	{
+		pos += front * velocity;
+	}
+
+	if (keys[GLFW_KEY_S])
+	{
+		pos -= front * velocity;
+	}
+
+	if (keys[GLFW_KEY_A])
+	{
+		pos -= right * velocity;
+	}
+
+	if (keys[GLFW_KEY_D])
+	{
+		pos += right * velocity;
+	}
+}
+
+///Brief desc.
+///
 ///Manages mouse movement which changes the viewing angle of the camera
 ///This function is called from Main.cpp and is updated until the mainwindow is closed
 ///@param a The change in X value from mouse input

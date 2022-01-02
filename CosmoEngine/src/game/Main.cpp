@@ -437,7 +437,7 @@ int main()
 
 	glm::mat4 projection = glm::perspective(glm::radians(60.0f), (GLfloat)currentWindow.getBufferWidth() / currentWindow.getBufferHeight(), 0.1f, 100.0f);
 
-
+	spotLights[0].Toggle();
 	std::chrono::steady_clock::time_point time2 =
 		std::chrono::high_resolution_clock::now();
 	// Loop until window closed
@@ -454,6 +454,8 @@ int main()
 
 		playerCamera.keyControl(currentWindow.getsKeys(), updateTime);
 		playerCamera.mouseControl(currentWindow.getXChange(), currentWindow.getYChange());
+		playerCamera.GamePadControl(currentWindow.axesCount, updateTime);
+
 		//If key L is pressed toggle spotlight
 		if (currentWindow.getsKeys()[GLFW_KEY_L])
 		{

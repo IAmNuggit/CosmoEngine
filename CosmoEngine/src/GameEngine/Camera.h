@@ -14,6 +14,7 @@ public:
 	Camera(glm::vec3 startPos, glm::vec3 startUp, GLfloat startYaw, GLfloat startPitch, GLfloat startMove, GLfloat startTurn);
 
 	void keyControl(bool* keys, GLfloat updateTime);
+	void GamePadControl(bool* keys, GLfloat updateTime);
 	void mouseControl(GLfloat xChange, GLfloat yChange);
 
 	glm::vec3 getCameraPos();

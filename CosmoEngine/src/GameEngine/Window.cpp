@@ -147,6 +147,32 @@ void Window::handleKeys(GLFWwindow* window, int key, int code, int action, int m
 	}
 }
 
+void Window::GamePadHandle()
+{
+	//GameController 
+	int present = glfwJoystickPresent(GLFW_JOYSTICK_1);
+	//std::cout << "GamePad One status: " << present << std::endl;
+
+	if (1 == present)
+	{
+		int axesCount;
+		const float *axes = glfwGetJoystickAxes(GLFW_JOYSTICK_1, &axesCount);
+		//std::cout << "Number of Axes: " << axesCount << std::endl;
+
+		std::cout << "Left Stick X Axis: " << axes[0] << std::endl;
+		std::cout << "Left Stick Y Axis: " << axes[1] << std::endl;
+		std::cout << "Right Stick X Axis: " << axes[2] << std::endl;
+		std::cout << "Right Stick Y Axis: " << axes[3] << std::endl;
+		std::cout << "Left Trigger/L1: " << axes[4] << std::endl;
+		std::cout << "Right Trigger/R1: " << axes[5] << std::endl;
+
+		if (axes[0] == 1 ){
+
+		}
+
+	}
+}
+
 ///Brief desc.
 ///
 ///This function handles user input in terms of mouse movement on the X and Y axis

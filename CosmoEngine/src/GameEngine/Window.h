@@ -44,5 +44,6 @@ private:
 
 	void createCallbacks();
 	static void handleKeys(GLFWwindow* window, int key, int code, int action, int mode);
+	static void GamePadHandle();
 	static void handleMouse(GLFWwindow* window, double xPos, double yPos);
 };
