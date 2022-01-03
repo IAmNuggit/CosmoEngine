@@ -94,10 +94,7 @@ void Camera::keyControl(bool* keys, GLfloat updateTime)
 	}
 }
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 ///Brief desc.
 ///
 ///Manages mouse movement which changes the viewing angle of the camera
