@@ -47,6 +47,7 @@ using namespace irrklang;
 #include "..\GameEngine\SpotLight.h"
 #include "..\GameEngine\Material.h"
 #include "..\GameEngine\Model.h"
+#include "..\GameEngine\skyBox.h"
 
 
 GLuint globalProjection = 0, globalModel = 0, globalView = 0, globalEyePosition = 0,
@@ -68,6 +69,9 @@ Material material;
 //Models
 Model Aircraft;
 Model F1;
+//Skybox
+Skybox skybox;
+
 //Lights
 DirectionalLight sceneLight;
 PointLight pointLights[MAX_POINT_LIGHTS];
@@ -288,6 +292,15 @@ void OmniDirectShadowMapPass(PointLight* light)
 
 void RenderPass(glm::mat4 projectionMatrix, glm::mat4 viewMatrix)
 {
+	//Viewing size within window
+	glViewport(0, 0, 1920, 1080);
+
+	// Clear the window
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	//skybox
+	skybox.drawSkyBox(viewMatrix, projectionMatrix);
 	//Make sure we are using the correct shader
 	shaderList[0].UseShader();
 
@@ -297,12 +310,6 @@ void RenderPass(glm::mat4 projectionMatrix, glm::mat4 viewMatrix)
 	globalEyePosition = shaderList[0].GetEyePositionLocation();
 	globalSpecularIntensity = shaderList[0].GetSpecularIntensityLocation();
 	globalShininess = shaderList[0].GetShininessLocation();
-	//Viewing size within window
-	glViewport(0, 0, 1920, 1080);
-
-	// Clear the window
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glUniformMatrix4fv(globalProjection, 1, GL_FALSE, glm::value_ptr(projectionMatrix));
 	glUniformMatrix4fv(globalView, 1, GL_FALSE, glm::value_ptr(viewMatrix));
@@ -369,6 +376,17 @@ int main()
 
 	F1 = Model();
 	F1.LoadModel("Models/Formula 1 mesh.obj");
+
+	std::vector<std::string> skyboxF;
+	skyboxF.push_back("Textures/SkyMap/starfield_rt.tga");
+	skyboxF.push_back("Textures/SkyMap/starfield_lt.tga");
+	skyboxF.push_back("Textures/SkyMap/starfield_up.tga");
+	skyboxF.push_back("Textures/SkyMap/starfield_dn.tga");
+	skyboxF.push_back("Textures/SkyMap/starfield_bk.tga");
+	skyboxF.push_back("Textures/SkyMap/starfield_ft.tga");
+
+	skybox = Skybox(skyboxF);
+
 
 
 	///////////////////////////////////////////////////////////////////////////////
@@ -449,11 +467,34 @@ int main()
 		lastTime = now;
 		glm::mat4 model(1.0f);
 
+		//GameController 
+		int present = glfwJoystickPresent(GLFW_JOYSTICK_1);
+		//std::cout << "GamePad One status: " << present << std::endl;
+
+		if (1 == present)
+		{
+			int axesCount;
+			const float *axes = glfwGetJoystickAxes(GLFW_JOYSTICK_1, &axesCount);
+			//std::cout << "Number of Axes: " << axesCount << std::endl;
+
+			std::cout << "Left Stick X Axis: " << axes[0] << std::endl;
+			std::cout << "Left Stick Y Axis: " << axes[1] << std::endl;
+			std::cout << "Right Stick X Axis: " << axes[2] << std::endl;
+			std::cout << "Right Stick Y Axis: " << axes[3] << std::endl;
+			std::cout << "Left Trigger/L1: " << axes[4] << std::endl;
+			std::cout << "Right Trigger/R1: " << axes[5] << std::endl;
+		}
+
 		// Get + Handle User Input
 		glfwPollEvents();
 
 		playerCamera.keyControl(currentWindow.getsKeys(), updateTime);
 		playerCamera.mouseControl(currentWindow.getXChange(), currentWindow.getYChange());
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 		//If key L is pressed toggle spotlight
 		if (currentWindow.getsKeys()[GLFW_KEY_L])
 		{

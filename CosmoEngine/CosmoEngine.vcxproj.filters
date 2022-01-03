@@ -57,6 +57,9 @@
     <ClCompile Include="src\GameEngine\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameEngine\Skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GameEngine\Camera.h">
@@ -99,6 +102,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\GameEngine\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEngine\Skybox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

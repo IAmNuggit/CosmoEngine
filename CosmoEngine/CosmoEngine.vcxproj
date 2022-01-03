@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameEngine\Skybox.cpp" />
     <ClCompile Include="src\game\Main.cpp" />
     <ClCompile Include="src\GameEngine\Shader.cpp" />
     <ClCompile Include="src\GameEngine\ShadowMap.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="src\GameEngine\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\GameEngine\Skybox.h" />
     <ClInclude Include="src\GameEngine\Shader.h" />
     <ClInclude Include="src\GameEngine\ShadowMap.h" />
     <ClInclude Include="src\GameEngine\SpotLight.h" />

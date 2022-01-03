@@ -1,3 +1,7 @@
 Performance Testing Document
  
+<<<<<<< Updated upstream
 Time Taken to start program: 3865(Milliseconds)
+=======
+Time Taken to start program: 3985(Milliseconds)
+>>>>>>> Stashed changes
