@@ -14,7 +14,9 @@
 //Audio System
 #include <conio.h>
 #include <irrKlang.h>
-
+//FreeType
+#include <ft2build.h>
+#include FT_FREETYPE_H
 
 using namespace irrklang;
 #pragma comment(lib, "irrKlang.lib") // link with irrKlang.dll
@@ -334,21 +336,13 @@ void RenderPass(glm::mat4 projectionMatrix, glm::mat4 viewMatrix)
 	RenderScene();
 }
 
+
 ///Brief desc.
 ///
 ///This is the main game loop which controls the program. Features of the function include: Window dimensions - Camera information - Texture and model file paths - Lighting information
 ///Also contains a while loops which loops until the window is closed.
 int main()
 {
-	// start the sound engine with default parameters
-	ISoundEngine* SoundEngine = createIrrKlangDevice();
-
-	if (!SoundEngine)
-		return 0; // error starting up the engine
-
-	ISound* music = SoundEngine->play3D("media/GameMusic.mp3",
-		vec3df(0, 0, 0), true, false, true);
-
 	// Get time
 	std::chrono::steady_clock::time_point time1 =
 		std::chrono::high_resolution_clock::now();
@@ -387,7 +381,7 @@ int main()
 
 	skybox = Skybox(skyboxF);
 
-
+	
 
 	///////////////////////////////////////////////////////////////////////////////
 	//////////////////////          Lighting            ///////////////////////////
@@ -452,6 +446,16 @@ int main()
 		1.0f, 0.0f, 0.0f,
 		20.0f);
 	spotLightCount++;
+
+
+	// start the sound engine with default parameters
+	ISoundEngine* SoundEngine = createIrrKlangDevice();
+
+	if (!SoundEngine)
+		return 0; // error starting up the engine
+
+	ISound* music = SoundEngine->play3D("media/GameMusic.mp3",
+		vec3df(0, 0, 0), true, false, true);
 
 	glm::mat4 projection = glm::perspective(glm::radians(60.0f), (GLfloat)currentWindow.getBufferWidth() / currentWindow.getBufferHeight(), 0.1f, 100.0f);
 

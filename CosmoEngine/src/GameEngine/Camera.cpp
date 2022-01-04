@@ -46,7 +46,7 @@ void Camera::update()
 ///Calculates the view matrix by using glm::lookat. This will apply all the correct rotations and translations that are needed to look at an object from a position
 glm::mat4 Camera::calculateViewMatrix()
 {
-	return glm::lookAt(pos, pos + front, up);
+	return glm::lookAt(pos, pos + front , up);
 }
 
 ///Get function which returns camera direction
