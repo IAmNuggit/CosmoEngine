@@ -69,8 +69,9 @@ Texture FloorTex;
 //Material
 Material material;
 //Models
+Model CrashedHeli;
 Model Aircraft;
-Model F1;
+Model Hanger;
 //Skybox
 Skybox skybox;
 
@@ -124,15 +125,15 @@ void RenderScene()
 
 	//Floor Model
 	model = glm::mat4(1.0f);
-	model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
-	model = glm::scale(model, glm::vec3(5.0f, 5.0f, 5.0f));
+	model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
+	model = glm::scale(model, glm::vec3(12.0f, 12.0f, 12.0f));
 	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(model));
 	FloorTex.UseTexture();
 	material.UseMaterial(globalSpecularIntensity, globalShininess);
 	meshList[2]->RenderMesh();
 
 	//Slowly rotates model, once angle reaches 360 reset it to 0. Prevents the variable value getting too high
-	AircraftAngle += 0.05f;
+	AircraftAngle += 0.025f;
 	if (AircraftAngle > 360.0f)
 	{
 		AircraftAngle = 0.1f;
@@ -146,22 +147,31 @@ void RenderScene()
 	//Aircraft Model
 	model = glm::mat4(1.0f);
 	model = glm::rotate(model, -AircraftAngle * toRad, glm::vec3(0.0f, 1.0f, 0.0f));
-	model = glm::translate(model, glm::vec3(-25.0f, 0.0f, 10.0f));
+	model = glm::translate(model, glm::vec3(-60.0f, 40.0f, 10.0f));
 	model = glm::rotate(model, 160.0f * toRad, glm::vec3(0.0f, 0.0f, 1.0f));
 	model = glm::rotate(model, -180.0f * toRad, glm::vec3(1.0f, 0.0f, 0.0f));
-	model = glm::scale(model, glm::vec3(0.6f, 0.6f, 0.6f));
+	model = glm::scale(model, glm::vec3(1.5f, 1.5f, 1.5f));
 	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(model));
 	material.UseMaterial(globalSpecularIntensity, globalShininess);
 	Aircraft.RenderModel();
 
-	//F1 Car Model
+	//Car Model
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(-41.0f, 1.2f, -10.0f));
+	model = glm::rotate(model, 30.0f, glm::vec3(0.0f, 0.2f, 0.0f));
+	model = glm::scale(model, glm::vec3(1.4f, 1.4f, 1.4f));
+	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(model));
+	material.UseMaterial(globalSpecularIntensity, globalShininess);
+	CrashedHeli.RenderModel();
+
+	//Hanger
 	model = glm::mat4(1.0f);
 	model = glm::translate(model, glm::vec3(0.0001f, -1.9f, 0.0001f));
 	//model = glm::rotate(model, F1Angle * toRad, glm::vec3(0.0f, 0.2f, 0.0f));
-	model = glm::scale(model, glm::vec3(0.04f, 0.04f, 0.04f));
+	model = glm::scale(model, glm::vec3(1.5f, 1.5f, 1.5f));
 	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(model));
 	material.UseMaterial(globalSpecularIntensity, globalShininess);
-	F1.RenderModel();
+	Hanger.RenderModel();
 
 }
 
@@ -365,11 +375,14 @@ int main()
 	material = Material(4.0f, 256);
 
 	//Model file locations
-	Aircraft = Model();
-	Aircraft.LoadModel("Models/Intergalactic_Spaceship-(Wavefront).obj");
+	CrashedHeli = Model();
+	CrashedHeli.LoadModel("Models/Renault12TL.obj");
 
-	F1 = Model();
-	F1.LoadModel("Models/Formula 1 mesh.obj");
+	Aircraft = Model();
+	Aircraft.LoadModel("Models/Heli.obj");
+
+	Hanger = Model();
+	Hanger.LoadModel("Models/Map_v1.obj");
 
 	std::vector<std::string> skyboxF;
 	skyboxF.push_back("Textures/SkyMap/starfield_rt.tga");
@@ -398,31 +411,24 @@ int main()
 	//Shadow - colour - Intensity - Position
 	pointLights[0] = PointLight(1024, 1024,
 		0.1f, 100.0f,
-		0.0f, 2.0f, 0.0f, 0.3f, 0.3f,
-		30.0f, 5.0f, 0.0f,
+		4.0f, 2.0f, 0.0f, 0.15f, 0.15f,
+		30.0f, 5.0f, -30.0f,
 		0.3f, 0.01f, 0.01f);
 	pointLightCount++;
 	////POINTLIGHT INSIDE F1 CAR////
 	//Shadow - colour - Intensity - Position
 	pointLights[1] = PointLight(1024, 1024,
 		0.1f, 100.0f,
-		1.0f, 0.0f, 0.0f, 0.0f, 0.4f,
-		0.0f, 4.0f, 0.0f,
+		2.0f, 0.0f, 0.0f, 0.2f, 0.2f,
+		0.0f, 7.0f, 0.0f,
 		0.3f, 0.01f, 0.01f);
 	pointLightCount++;
 
 	//Shadow - colour - Intensity - Position
 	pointLights[2] = PointLight(1024, 1024,
 		0.1f, 100.0f,
-		0.0f, 0.0f, 2.0f, 0.3f, 0.3f,
-		-30.0f, 4.0f, 0.0f,
-		0.3f, 0.01f, 0.01f);
-	pointLightCount++;
-	//Shadow - colour - Intensity - Position
-	pointLights[3] = PointLight(1024, 1024,
-		0.1f, 100.0f,
-		0.0f, 0.0f, 200.0f, 0.3f, 0.3f,
-		20.0f, 4.0f, 0.0f,
+		4.0f, 2.0f, 0.0f, 0.1f, 0.1f,
+		-18.0f, 4.0f, 37.0f,
 		0.3f, 0.01f, 0.01f);
 	pointLightCount++;
 
@@ -454,7 +460,7 @@ int main()
 	if (!SoundEngine)
 		return 0; // error starting up the engine
 
-	ISound* music = SoundEngine->play3D("media/GameMusic.mp3",
+	ISound* music = SoundEngine->play3D("media/Run.mp3",
 		vec3df(0, 0, 0), true, false, true);
 
 	glm::mat4 projection = glm::perspective(glm::radians(60.0f), (GLfloat)currentWindow.getBufferWidth() / currentWindow.getBufferHeight(), 0.1f, 100.0f);

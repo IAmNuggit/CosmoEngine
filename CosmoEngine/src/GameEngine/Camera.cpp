@@ -71,7 +71,7 @@ glm::vec3 Camera::getCameraPos()
 ///@param b Duration of key press, while key is press continue moving camera
 void Camera::keyControl(bool* keys, GLfloat updateTime)
 {
-	GLfloat velocity = moveS * updateTime;
+	GLfloat velocity = (moveS * updateTime) * 3;
 
 	if (keys[GLFW_KEY_W])
 	{
