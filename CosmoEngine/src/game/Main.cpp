@@ -476,6 +476,12 @@ int main()
 		updateTime = now - lastTime; // (now - lastTime)*1000/SDL_GetPerformanceFrequency();
 		lastTime = now;
 		glm::mat4 model(1.0f);
+		bool keys[1024];
+
+		for (size_t i = 0; i < 1024; i++)
+		{
+			keys[i] = 0;
+		}
 
 		//GameController 
 		int present = glfwJoystickPresent(GLFW_JOYSTICK_1);
@@ -487,18 +493,62 @@ int main()
 			const float *axes = glfwGetJoystickAxes(GLFW_JOYSTICK_1, &axesCount);
 			//std::cout << "Number of Axes: " << axesCount << std::endl;
 
-			std::cout << "Left Stick X Axis: " << axes[0] << std::endl;
+			/*std::cout << "Left Stick X Axis: " << axes[0] << std::endl;
 			std::cout << "Left Stick Y Axis: " << axes[1] << std::endl;
 			std::cout << "Right Stick X Axis: " << axes[2] << std::endl;
 			std::cout << "Right Stick Y Axis: " << axes[3] << std::endl;
 			std::cout << "Left Trigger/L1: " << axes[4] << std::endl;
-			std::cout << "Right Trigger/R1: " << axes[5] << std::endl;
+			std::cout << "Right Trigger/R1: " << axes[5] << std::endl;*/
+
+			int buttonCount;
+			const unsigned char *buttons = glfwGetJoystickButtons(GLFW_JOYSTICK_1, &buttonCount);
+
+			if (GLFW_PRESS == buttons[1])
+			{
+				std::cout << "B button pressed" << std::endl;
+				return 0;
+			}
+			else if (GLFW_RELEASE == buttons[1])
+			{
+				//std::cout << "B button released" << std::endl;
+			}
+			//Left Joystick
+			if (axes[0] <= -0.7) {
+				std::cout << " R Left" << std::endl;
+				keys[65] = true;
+			}
+			if (axes[0] >= 0.7) {
+				std::cout << "R Right" << std::endl;
+				keys[68] = true;
+			}
+			if (axes[1] >= 0.7) {
+				std::cout << "R Down" << std::endl;
+				keys[83] = true;
+			}
+			if (axes[1] <= -0.7) {
+				std::cout << "R Up" << std::endl;
+				keys[87] = true;
+			}
+			//Right Joystick
+			if (axes[2] <= -0.7) {
+				std::cout << "L Left" << std::endl;
+			}
+			if (axes[2] >= 0.7) {
+				std::cout << "L Right" << std::endl;
+			}
+			if (axes[3] <= -0.7) {
+				std::cout << "L Up" << std::endl;
+			}
+			if (axes[3] >= 0.7) {
+				std::cout << "L Down" << std::endl;
+			}
 		}
+
 
 		// Get + Handle User Input
 		glfwPollEvents();
 
-		playerCamera.keyControl(currentWindow.getsKeys(), updateTime);
+		playerCamera.keyControl(currentWindow.getsKeys(),keys, updateTime);
 		playerCamera.mouseControl(currentWindow.getXChange(), currentWindow.getYChange());
 
 		//If key L is pressed toggle spotlight

@@ -69,26 +69,26 @@ glm::vec3 Camera::getCameraPos()
 ///This function is called from Main.cpp and is updated until the mainwindow is closed
 ///@param a Value of key pressed from the user. Is gained from Window::handleKeys()
 ///@param b Duration of key press, while key is press continue moving camera
-void Camera::keyControl(bool* keys, GLfloat updateTime)
+void Camera::keyControl(bool* keys, bool* keysJoy, GLfloat updateTime)
 {
 	GLfloat velocity = (moveS * updateTime) * 3;
 
-	if (keys[GLFW_KEY_W])
+	if (keys[GLFW_KEY_W] | keysJoy[87])
 	{
 		pos += front * velocity;
 	}
 
-	if (keys[GLFW_KEY_S])
+	if (keys[GLFW_KEY_S] | keysJoy[83])
 	{
 		pos -= front * velocity;
 	}
 
-	if (keys[GLFW_KEY_A])
+	if (keys[GLFW_KEY_A] | keysJoy[65])
 	{
 		pos -= right * velocity;
 	}
 
-	if (keys[GLFW_KEY_D])
+	if (keys[GLFW_KEY_D]| keysJoy[68])
 	{
 		pos += right * velocity;
 	}

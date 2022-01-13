@@ -2,6 +2,14 @@
 /// The Window class HEADER
 
 #include "stdio.h"
+#include <string.h>
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include <cmath>
+#include <vector>
+#include <chrono>
+#include <Windows.h>
 
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
@@ -45,4 +53,5 @@ private:
 	void createCallbacks();
 	static void handleKeys(GLFWwindow* window, int key, int code, int action, int mode);
 	static void handleMouse(GLFWwindow* window, double xPos, double yPos);
+
 };
