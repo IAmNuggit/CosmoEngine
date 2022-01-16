@@ -1,9 +1,8 @@
 #include "Shader.h"
 
-/// The Shader class creates a fly style camera
+/// The Shader class opens, reads and utilises shader files 
 ///
-/// The following class creates a camera which allows you to freely move around the scene using both keyboard and mouse inputs.
-/// Features include: Camera movement using WASD, Camera direction controlled by mouse with constraints.
+/// The following class opens and reads .vert .frag and .geom shaders - Valiadates them - Compiles 
 
 
 ///Brief desc.
@@ -18,15 +17,6 @@ Shader::Shader()
 
 	pointLightCount = 0;
 	spotLightCount = 0;
-}
-
-
-///Brief desc.
-///
-///
-void Shader::CreateFromString(const char* vertexCode, const char* fragmentCode)
-{
-	CompileShader(vertexCode, fragmentCode);
 }
 
 

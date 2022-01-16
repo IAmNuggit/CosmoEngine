@@ -1,5 +1,8 @@
 #pragma once
-/// The Material HEADER
+
+/// Material class which controls specular colour and how it is scattered 
+///
+/// This is a base class used by subclasses such as model
 #include <GL\glew.h>
 
 class Material

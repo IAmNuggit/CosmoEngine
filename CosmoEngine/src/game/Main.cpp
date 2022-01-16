@@ -3,7 +3,7 @@
 
 /// The Main class contains the main loop for the program 
 ///
-/// This main class contains the following features: External filepath locations, model and light information and other functions include a Average normal calculations
+/// This main class brings together all of the components from other  classes to create a game world. 
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
@@ -49,7 +49,7 @@ using namespace irrklang;
 #include "..\GameEngine\SpotLight.h"
 #include "..\GameEngine\Material.h"
 #include "..\GameEngine\Model.h"
-#include "..\GameEngine\skyBox.h"
+//#include "..\GameEngine\skyBox.h"
 
 
 GLuint globalProjection = 0, globalModel = 0, globalView = 0, globalEyePosition = 0,
@@ -73,7 +73,7 @@ Model CrashedHeli;
 Model Aircraft;
 Model Hanger;
 //Skybox
-Skybox skybox;
+//Skybox skybox;
 
 //Lights
 DirectionalLight sceneLight;
@@ -312,7 +312,7 @@ void RenderPass(glm::mat4 projectionMatrix, glm::mat4 viewMatrix)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//skybox
-	skybox.drawSkyBox(viewMatrix, projectionMatrix);
+	//skybox.drawSkyBox(viewMatrix, projectionMatrix);
 	//Make sure we are using the correct shader
 	shaderList[0].UseShader();
 
@@ -384,7 +384,7 @@ int main()
 	Hanger = Model();
 	Hanger.LoadModel("Models/Map_v1.obj");
 
-	std::vector<std::string> skyboxF;
+	/*std::vector<std::string> skyboxF;
 	skyboxF.push_back("Textures/SkyMap/starfield_rt.tga");
 	skyboxF.push_back("Textures/SkyMap/starfield_lt.tga");
 	skyboxF.push_back("Textures/SkyMap/starfield_up.tga");
@@ -392,9 +392,9 @@ int main()
 	skyboxF.push_back("Textures/SkyMap/starfield_bk.tga");
 	skyboxF.push_back("Textures/SkyMap/starfield_ft.tga");
 
-	skybox = Skybox(skyboxF);
+	skybox = Skybox(skyboxF);*/
 
-	
+
 
 	///////////////////////////////////////////////////////////////////////////////
 	//////////////////////          Lighting            ///////////////////////////
@@ -460,7 +460,7 @@ int main()
 	if (!SoundEngine)
 		return 0; // error starting up the engine
 
-	ISound* music = SoundEngine->play3D("media/Run.mp3",
+	irrklang::ISound* music = SoundEngine->play3D("media/Run.mp3",
 		vec3df(0, 0, 0), true, false, true);
 
 	glm::mat4 projection = glm::perspective(glm::radians(60.0f), (GLfloat)currentWindow.getBufferWidth() / currentWindow.getBufferHeight(), 0.1f, 100.0f);
@@ -548,7 +548,7 @@ int main()
 		// Get + Handle User Input
 		glfwPollEvents();
 
-		playerCamera.keyControl(currentWindow.getsKeys(),keys, updateTime);
+		playerCamera.keyControl(currentWindow.getsKeys(), keys, updateTime);
 		playerCamera.mouseControl(currentWindow.getXChange(), currentWindow.getYChange());
 
 		//If key L is pressed toggle spotlight
@@ -561,6 +561,18 @@ int main()
 		{
 			pointLights[0].Toggle();
 			currentWindow.getsKeys()[GLFW_KEY_E] = false;
+		}
+		//Pause Music
+		if (currentWindow.getsKeys()[GLFW_KEY_M])
+		{
+			music->setIsPaused(true);
+			currentWindow.getsKeys()[GLFW_KEY_M] = false;
+		}
+		//Unpause Music
+		if (currentWindow.getsKeys()[GLFW_KEY_N])
+		{
+			music->setIsPaused(false);
+			currentWindow.getsKeys()[GLFW_KEY_N] = false;
 		}
 		//Call shadowMap passes
 		DirectShadowMapPass(&sceneLight);

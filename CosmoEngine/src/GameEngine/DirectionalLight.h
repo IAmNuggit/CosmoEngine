@@ -1,5 +1,9 @@
 #pragma once
-/// The Directional Light HEADER 
+/// Main Scene Light
+///
+/// The Directional Light class 
+///
+/// This class creates the main light used in the scene
 #include "Light.h"
 
 class DirectionalLight :

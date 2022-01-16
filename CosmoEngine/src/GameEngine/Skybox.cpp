@@ -1,10 +1,17 @@
 #include "Skybox.h"
 
+/// The Skybox class creates cubemap which encapsulates the camera
+///
+/// The following class creates a cubemap which 6 textured faces. This is then places around the camera with no depth value to give the illusion of the skybox being far away
+
+///default constructor
 Skybox::Skybox()
 {
 
 }
-
+///Brief desc.
+///
+///Setup of skybox. Includes implementing skybox shaders and setup and attaching images to the cubemap
 Skybox::Skybox(std::vector<std::string> faceLocation)
 {
 	//Setting up the shader using .vert and .frag files
@@ -84,7 +91,9 @@ Skybox::Skybox(std::vector<std::string> faceLocation)
 	//Number of Vertices and Indices
 	skyBoxMesh->CreateMesh(skyboxVertices, skyBoxIndices, 64, 36);
 }
-
+///Brief desc.
+///
+/// This function deals with drawing the skybox. To do this depthmask is disabled - Values are attached to texture and shader - Skybox is validated and then rendered - Depth mask enabled
 void Skybox::drawSkyBox(glm::mat4 viewMatrix, glm::mat4 projectionMatrix)
 {
 	viewMatrix = glm::mat4(glm::mat3(viewMatrix));
@@ -109,7 +118,7 @@ void Skybox::drawSkyBox(glm::mat4 viewMatrix, glm::mat4 projectionMatrix)
 	//Enable DepthMask
 	glDepthMask(GL_TRUE);
 }
-
+///Destructor
 Skybox::~Skybox()
 {
 

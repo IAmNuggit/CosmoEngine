@@ -1,5 +1,7 @@
 #pragma once
-/// The ShadowMap class HEADER
+/// Basic shadow map class which creates shadows for directional light
+///
+/// This class is used to create a basic shadowmap. Also used as a base class for Omnishadow class
 
 #include <stdio.h>
 

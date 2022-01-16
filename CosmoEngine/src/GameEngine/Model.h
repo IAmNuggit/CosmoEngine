@@ -1,5 +1,7 @@
 #pragma once
-/// The Model HEADER
+/// Load and render imported models.
+///
+/// This class will load and render imported models using a .obj and .mtl file
 
 #include <vector>
 #include <string>

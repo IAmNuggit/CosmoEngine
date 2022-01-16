@@ -1,7 +1,7 @@
 #include "DirectionalLight.h"
-
-/// The Directional Light class 
+///Main Scene Light
 ///
+/// The Directional Light class 
 /// This class creates the main light used in the scene
 
 
@@ -15,6 +15,10 @@ DirectionalLight::DirectionalLight() : Light()
 	lightProj = glm::ortho(-5.0f, 5.0f, -5.0f, 5.0f, 0.1f, 20.0f);
 }
 
+///Brief desc.
+///
+///**Constructor** - 
+///Sets starting values for variables used in the class
 DirectionalLight::DirectionalLight(GLfloat shadowWidth, GLfloat shadowHeight,
 	GLfloat red, GLfloat green, GLfloat blue,
 	GLfloat aIntensity, GLfloat dIntensity,

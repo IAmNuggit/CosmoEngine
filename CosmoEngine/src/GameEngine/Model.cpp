@@ -1,8 +1,8 @@
 #include "Model.h"
 
-/// The Model class
+/// Load and render imported models.
 ///
-/// This class will load and render imported models
+/// This class will load and render imported models using a .obj and .mtl file
 
 
 ///Brief desc.

@@ -1,5 +1,8 @@
 #pragma once
-/// The Light HEADER
+/// Base Light class used by other Light classes
+///
+/// The Light class
+/// This is a base class used by multiple subclasses. Contains information needed for all subclasses
 
 #include <GL\glew.h>
 #include <glm\glm.hpp>

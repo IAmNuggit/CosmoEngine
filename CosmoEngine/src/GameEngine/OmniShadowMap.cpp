@@ -11,7 +11,7 @@ OmniShadowMap::OmniShadowMap() : ShadowMap()
 
 ///Brief desc.
 ///
-///
+/// Initiliastion of cubemap - Apply data to all 6 faces of the cubemap
 
 bool OmniShadowMap::Init(unsigned int width, unsigned int height)
 {

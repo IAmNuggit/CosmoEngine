@@ -1,5 +1,7 @@
 
-
+/// The Skybox class creates cubemap which encapsulates the camera
+///
+/// The following class creates a cubemap which 6 textured faces. This is then places around the camera with no depth value to give the illusion of the skybox being far away
 
 #include <vector>
 #include <string>

@@ -1,8 +1,8 @@
 #include "SpotLight.h"
 
-/// The Spotlight class 
+/// Spotlight class inherits from the Pointlight which inherits from the base light class 
 ///
-/// This class creates the spotlights which appear on scene
+/// This class creates the spotlights which appear on scene.
 
 ///Brief desc.
 ///
@@ -15,7 +15,9 @@ SpotLight::SpotLight() : PointLight()
 	procEdge = cosf(glm::radians(edge));
 	isOn = true;
 }
-
+///Brief desc.
+///
+///Initilise light values 
 SpotLight::SpotLight(GLfloat shadowWidth, GLfloat shadowHeight,
 	GLfloat near, GLfloat far,
 	GLfloat red, GLfloat green, GLfloat blue,

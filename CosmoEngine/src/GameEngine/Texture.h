@@ -1,5 +1,7 @@
 #pragma once
-/// The Texture class HEADER
+/// This class takes images from the texture folder and loads it "onto" the models
+///
+/// Loads .png image files to a texture - Use texture - Clear texture for memory 
 
 #include <GL\glew.h>
 #include "CommonValues.h"

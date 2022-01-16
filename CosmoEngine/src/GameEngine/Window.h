@@ -1,5 +1,7 @@
 #pragma once
-/// The Window class HEADER
+/// The Window class creates the window in which the program will draw to
+///
+/// The following class creates a window based on certain parameters. Also includes the functions to handle key presses and mouse movements 
 
 #include "stdio.h"
 #include <string.h>

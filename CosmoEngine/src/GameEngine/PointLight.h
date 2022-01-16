@@ -1,5 +1,7 @@
 #pragma once
-/// The PointLight class HEADER
+/// PointLight class which inherits from the base light class adding extra features 
+///
+/// This class creates the PointLights which appear on scene, using the base light class.
 
 #include <vector>
 

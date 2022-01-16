@@ -1,5 +1,7 @@
 #pragma once
-/// The Shader class HEADER
+/// The Shader class opens, reads and utilises shader files 
+///
+/// The following class opens and reads .vert .frag and .geom shaders - Valiadates them - Compiles 
 
 #include <stdio.h>
 #include <string>
@@ -22,7 +24,6 @@ class Shader
 public:
 	Shader();
 
-	void CreateFromString(const char* vertexCode, const char* fragmentCode);
 	void CreateFromFiles(const char* vertexLocation, const char* fragmentLocation);
 	void CreateFromFiles(const char* vertexLocation, const char* geometryLocation, const char* fragmentLocation);
 

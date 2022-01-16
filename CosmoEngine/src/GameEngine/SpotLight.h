@@ -1,5 +1,8 @@
 #pragma once
-/// The SpotLight class HEADER
+/// Spotlight class inherits from the Pointlight which inherits from the base light class 
+///
+/// This class creates the spotlights which appear on scene.
+
 
 #include "PointLight.h"
 class SpotLight :

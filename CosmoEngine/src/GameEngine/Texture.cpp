@@ -1,10 +1,13 @@
 #include "Texture.h"
 
-/// The Texture class is tasked with applying a texture to an object
+/// This class takes images from the texture folder and loads it "onto" the models
 ///
-/// The following class will take a simple triangle object and texture it using an saved image
+/// Loads .png image files to a texture - Use texture - Clear texture for memory 
 
-
+///Brief desc.
+///
+///**Constructor** - 
+///Sets starting values for variables used in the class
 Texture::Texture()
 {
 	textureID = 0;
@@ -16,7 +19,6 @@ Texture::Texture()
 
 ///Brief desc.
 ///
-///**Constructor** - 
 ///Sets starting values for variables used in the class
 Texture::Texture(const char* fileLoc)
 {

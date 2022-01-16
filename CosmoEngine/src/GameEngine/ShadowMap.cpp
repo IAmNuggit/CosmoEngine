@@ -1,14 +1,23 @@
 #include "ShadowMap.h"
-/// The OmniShadowMap class contains
+/// Basic shadow map class which creates shadows for directional light
 ///
 /// This class is used to create a basic shadowmap. Also used as a base class for Omnishadow class
 
+///Brief desc.
+///
+///**Constructor** - 
+///Sets starting values for variables used in the class
 ShadowMap::ShadowMap()
 {
 	FBO = 0;
 	shadowMap = 0;
 }
 
+///Brief desc.
+///
+/// Initilise shadowmap 
+///@param a Width
+///@param b Height
 bool ShadowMap::Init(GLuint width, GLuint height)
 {
 	shadowWidth = width; shadowHeight = height;
@@ -31,6 +40,7 @@ bool ShadowMap::Init(GLuint width, GLuint height)
 	glDrawBuffer(GL_NONE);
 	glReadBuffer(GL_NONE);
 
+	//Check framebuffer for error
 	GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
 
 	if (status != GL_FRAMEBUFFER_COMPLETE)
@@ -43,12 +53,16 @@ bool ShadowMap::Init(GLuint width, GLuint height)
 
 	return true;
 }
+///Brief desc.
+///
 ///When we are ready to write the first pass, this function will bind the
 /// FBO to the shadowmap
 void ShadowMap::Write()
 {
 	glBindFramebuffer(GL_FRAMEBUFFER, FBO);
 }
+///Brief desc.
+///
 ///Second pass to render to the screen. Use as texture
 void ShadowMap::Read(GLenum textureUnit)
 {

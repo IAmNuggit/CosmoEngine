@@ -1,7 +1,7 @@
 #include "PointLight.h"
-/// The PointLight class 
+/// PointLight class which inherits from the base light class adding extra features 
 ///
-/// This class creates the PointLight which appear on scene
+/// This class creates the PointLights which appear on scene, using the base light class.
 
 ///Brief desc.
 ///
@@ -15,7 +15,9 @@ PointLight::PointLight() : Light()
 	exponent = 0.0f;
 	isOn = true;
 }
-
+///Brief desc.
+///
+///Initilise Omni-directional shadowmap - Setup light values 
 PointLight::PointLight(GLfloat shadowWidth, GLfloat shadowHeight,
 	GLfloat near, GLfloat far,
 	GLfloat red, GLfloat green, GLfloat blue,
@@ -53,7 +55,9 @@ void PointLight::UseLight(GLuint ambientIntensityLocation, GLuint ambientColourL
 	glUniform1f(linearLocation, linear);
 	glUniform1f(exponentLocation, exponent);
 }
-
+///Brief desc.
+///
+///Calculate Light transform
 std::vector<glm::mat4> PointLight::CalculateLightTransform()
 {
 	std::vector<glm::mat4> lightTransforms;
@@ -82,7 +86,7 @@ GLfloat PointLight::GetFarPlane()
 {
 	return farPlane;
 }
-
+///Destructor
 PointLight::~PointLight()
 {
 }

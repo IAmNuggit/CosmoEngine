@@ -1,4 +1,5 @@
 #include "Mesh.h"
+
 /// The Mesh class contains all the object information
 ///
 /// The following class is responsible for loading, creating and drawing a mesh into the screen.
