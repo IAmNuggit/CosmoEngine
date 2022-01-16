@@ -68,11 +68,13 @@ Material material;
 //Models
 Model Car;
 Model Aircraft;
-Model Hanger;
+Model Building;
+
 //Model matrices
 glm::mat4 FloorMatrix;
 glm::mat4 AircraftMatrix;
 glm::mat4 CarMatrix;
+glm::mat4 BuildingMatrix;
 
 //Skybox
 Skybox skybox;
@@ -125,7 +127,7 @@ void RenderScene()
 {
 	//Floor Model
 	FloorMatrix = glm::mat4(1.0f);
-	FloorMatrix = glm::translate(FloorMatrix, glm::vec3(0.0f, -2.0f, 0.0f));
+	FloorMatrix = glm::translate(FloorMatrix, glm::vec3(0.0f, -3.0f, 0.0f));
 	FloorMatrix = glm::scale(FloorMatrix, glm::vec3(5.0f, 5.0f, 5.0f));
 	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(FloorMatrix));
 	FloorTex.UseTexture();
@@ -164,15 +166,14 @@ void RenderScene()
 	material.UseMaterial(globalSpecularIntensity, globalShininess);
 	Car.RenderModel();
 
-	/*Hanger
-	model = glm::mat4(1.0f);
-	model = glm::translate(model, glm::vec3(0.0001f, -1.9f, 0.0001f));
+	//Building Model
+	BuildingMatrix = glm::mat4(1.0f);
+	BuildingMatrix = glm::translate(BuildingMatrix, glm::vec3(0.0001f, -1.9f, 0.0001f));
 	//model = glm::rotate(model, F1Angle * toRad, glm::vec3(0.0f, 0.2f, 0.0f));
-	model = glm::scale(model, glm::vec3(1.5f, 1.5f, 1.5f));
-	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(model));
+	BuildingMatrix = glm::scale(BuildingMatrix, glm::vec3(1.5f, 1.5f, 1.5f));
+	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(BuildingMatrix));
 	material.UseMaterial(globalSpecularIntensity, globalShininess);
-	Hanger.RenderModel();*/
-
+	Building.RenderModel();
 }
 
 ///Brief desc.
@@ -263,6 +264,7 @@ void detectCollisions()
 	// Detect and resolve collisions with each model
 	collideBox(AircraftMatrix, Aircraft.GetBoundingBox(), border, pos);
 	collideBox(CarMatrix, Car.GetBoundingBox(), border, pos);
+	//collideBox(BuildingMatrix, Building.GetBoundingBox(), border, pos);
 
 	// Update camera position
 	playerCamera.setCameraPos(pos);
@@ -472,10 +474,10 @@ int main()
 	Car.LoadModel("Models/Renault12TL.obj");
 
 	Aircraft = Model();
-	Aircraft.LoadModel("Models/Heli.obj");
+	Aircraft.LoadModel("Models/Intergalactic_Spaceship-(Wavefront).obj");
 
-	Hanger = Model();
-	Hanger.LoadModel("Models/Map_v1.obj");
+	Building = Model();
+	Building.LoadModel("Models/Map_v1.obj");
 
 	std::vector<std::string> skyboxF;
 	skyboxF.push_back("Textures/SkyMap/starfield_rt.tga");
