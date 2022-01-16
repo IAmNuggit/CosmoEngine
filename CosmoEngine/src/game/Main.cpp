@@ -459,7 +459,7 @@ int main()
 	CreateShaders();
 
 	//Setup starting postions of the camera - Position - pitch/yaw - Camera direction
-	playerCamera = Camera(glm::vec3(-41.0f, 10.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, -40.0f, 5.0f, 0.5f);
+	playerCamera = Camera(glm::vec3(0.0f, 10.0f, 15.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, -40.0f, 5.0f, 0.5f);
 
 	//Texture file locations
 	FloorTex = Texture((char*)"Textures/Floor.png");
@@ -487,7 +487,11 @@ int main()
 
 	skybox = Skybox(skyboxF);
 
+
+
+	///////////////////////////////////////////////////////////////////////////////
 	//////////////////////          Lighting            ///////////////////////////
+	///////////////////////////////////////////////////////////////////////////////
 
 	//colour - Intensity - Direction
 	sceneLight = DirectionalLight(2048, 2048,
@@ -561,6 +565,7 @@ int main()
 	while (!currentWindow.getShouldClose())
 	{
 		GLfloat now = glfwGetTime();
+		//SDL_GetPerformanceCounter();
 		updateTime = now - lastTime; // (now - lastTime)*1000/SDL_GetPerformanceFrequency();
 		lastTime = now;
 		glm::mat4 model(1.0f);
