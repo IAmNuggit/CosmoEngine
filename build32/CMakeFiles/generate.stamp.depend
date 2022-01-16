@@ -1,0 +1,20 @@
+# CMake generation dependency list for this directory.
+A:/CosmoEngine/build32/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake
+A:/CosmoEngine/build32/CMakeFiles/3.20.2/CMakeRCCompiler.cmake
+A:/CosmoEngine/build32/CMakeFiles/3.20.2/CMakeSystem.cmake
+A:/CosmoGameEngine/CMake/Utils.cmake
+A:/CosmoGameEngine/CMakeLists.txt
+C:/CMake/share/cmake-3.20/Modules/CMakeCXXInformation.cmake
+C:/CMake/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake
+C:/CMake/share/cmake-3.20/Modules/CMakeGenericSystem.cmake
+C:/CMake/share/cmake-3.20/Modules/CMakeInitializeConfigs.cmake
+C:/CMake/share/cmake-3.20/Modules/CMakeLanguageInformation.cmake
+C:/CMake/share/cmake-3.20/Modules/CMakeRCInformation.cmake
+C:/CMake/share/cmake-3.20/Modules/CMakeSystemSpecificInformation.cmake
+C:/CMake/share/cmake-3.20/Modules/CMakeSystemSpecificInitialize.cmake
+C:/CMake/share/cmake-3.20/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/CMake/share/cmake-3.20/Modules/Compiler/MSVC-CXX.cmake
+C:/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC.cmake
+C:/CMake/share/cmake-3.20/Modules/Platform/Windows.cmake
+C:/CMake/share/cmake-3.20/Modules/Platform/WindowsPaths.cmake

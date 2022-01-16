@@ -1,0 +1,4 @@
+# CMake generation dependency list for this directory.
+A:/CosmoGameEngine/CMake/Default.cmake
+A:/CosmoGameEngine/CMake/DefaultCXX.cmake
+A:/CosmoGameEngine/CosmoEngine/CMakeLists.txt

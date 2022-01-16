@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\game\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\DirectionalLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\OmniShadowMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\PointLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\ShadowMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\SpotLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\CommonValues.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\DirectionalLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\OmniShadowMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\PointLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\ShadowMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Skybox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\SpotLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A:\CosmoGameEngine\CosmoEngine\src\GameEngine\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="A:\CosmoGameEngine\CosmoEngine\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D2127E25-9C1D-33CE-965F-78308D88BE20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{41D59DF2-FC00-318F-87A1-21FD0D7276E3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -9,171 +9,203 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{9CADA36E-AE60-43E0-AE22-32F13F7520FB}</ProjectGuid>
-    <RootNamespace>CosmoEngine</RootNamespace>
+    <ProjectGuid>{6002CE9E-74A1-3896-9B9A-947847EC3A8E}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>CosmoEngine</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="Shared">
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)CosmoEngine\</OutDir>
-    <IntDir>$(SolutionDir)CosmoEngine\bin\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)CosmoEngine\</OutDir>
-    <IntDir>$(SolutionDir)CosmoEngine\bin\</IntDir>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">A:\CosmoEngine\CosmoEngine\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CosmoEngine.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CosmoEngine</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">A:\CosmoEngine\CosmoEngine\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CosmoEngine.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CosmoEngine</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>A:\CosmoEngine\CosmoEngine\Contrib\GLEW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLFW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLM;A:\CosmoEngine\CosmoEngine\Contrib\ASSIMP\include;A:\CosmoEngine\CosmoEngine\Contrib\irrKlang-1.6.0\include;A:\CosmoEngine\CosmoEngine\Contrib\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\include;$(SolutionDir)\CosmoEngine\Contrib\GLFW\include;$(SolutionDir)\CosmoEngine\Contrib\GLM;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\include;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\include;$(SolutionDir)\CosmoEngine\Contrib\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\lib\Release\Win32;$(SolutionDir)\CosmoEngine\Contrib\GLFW\lib-vc2017;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\lib;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\lib\Win32-visualStudio;$(SolutionDir)\CosmoEngine\Contrib\FreeType\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
       <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\include;$(SolutionDir)\CosmoEngine\Contrib\GLFW\include;$(SolutionDir)\CosmoEngine\Contrib\GLM;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\include;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_MBCS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_MBCS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>A:\CosmoEngine\CosmoEngine\Contrib\GLEW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLFW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLM;A:\CosmoEngine\CosmoEngine\Contrib\ASSIMP\include;A:\CosmoEngine\CosmoEngine\Contrib\irrKlang-1.6.0\include;A:\CosmoEngine\CosmoEngine\Contrib\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>A:\CosmoEngine\CosmoEngine\Contrib\GLEW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLFW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLM;A:\CosmoEngine\CosmoEngine\Contrib\ASSIMP\include;A:\CosmoEngine\CosmoEngine\Contrib\irrKlang-1.6.0\include;A:\CosmoEngine\CosmoEngine\Contrib\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
     <Link>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;assimp-vc140-mt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>A:/CosmoEngine/CosmoEngine/Contrib/GLEW/lib/Release/Win32;A:/CosmoEngine/CosmoEngine/Contrib/GLEW/lib/Release/Win32/$(Configuration);A:/CosmoEngine/CosmoEngine/Contrib/GLFW/lib-vc2017;A:/CosmoEngine/CosmoEngine/Contrib/GLFW/lib-vc2017/$(Configuration);A:/CosmoEngine/CosmoEngine/Contrib/ASSIMP/lib;A:/CosmoEngine/CosmoEngine/Contrib/ASSIMP/lib/$(Configuration);A:/CosmoEngine/CosmoEngine/Contrib/irrKlang-1.6.0/lib/Win32-visualStudio;A:/CosmoEngine/CosmoEngine/Contrib/irrKlang-1.6.0/lib/Win32-visualStudio/$(Configuration);A:/CosmoEngine/CosmoEngine/Contrib/FreeType/lib;A:/CosmoEngine/CosmoEngine/Contrib/FreeType/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>A:/CosmoEngine/CosmoEngine/CosmoEngine.lib</ImportLibrary>
+      <ProgramDataBaseFile>A:/CosmoEngine/CosmoEngine/CosmoEngine.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\lib\Release\Win32;$(SolutionDir)\CosmoEngine\Contrib\GLFW\lib-vc2017;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\lib;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\lib\Win32-visualStudio;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>A:\CosmoEngine\CosmoEngine\Contrib\GLEW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLFW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLM;A:\CosmoEngine\CosmoEngine\Contrib\ASSIMP\include;A:\CosmoEngine\CosmoEngine\Contrib\irrKlang-1.6.0\include;A:\CosmoEngine\CosmoEngine\Contrib\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\include;$(SolutionDir)\CosmoEngine\Contrib\GLFW\include;$(SolutionDir)\CosmoEngine\Contrib\GLM;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\include;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\include;$(SolutionDir)\CosmoEngine\Contrib\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\lib\Release\Win32;$(SolutionDir)\CosmoEngine\Contrib\GLFW\lib-vc2017;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\lib;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\lib\Win32-visualStudio;$(SolutionDir)\CosmoEngine\Contrib\FreeType\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\include;$(SolutionDir)\CosmoEngine\Contrib\GLFW\include;$(SolutionDir)\CosmoEngine\Contrib\GLM;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\include;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_MBCS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_MBCS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>A:\CosmoEngine\CosmoEngine\Contrib\GLEW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLFW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLM;A:\CosmoEngine\CosmoEngine\Contrib\ASSIMP\include;A:\CosmoEngine\CosmoEngine\Contrib\irrKlang-1.6.0\include;A:\CosmoEngine\CosmoEngine\Contrib\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>A:\CosmoEngine\CosmoEngine\Contrib\GLEW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLFW\include;A:\CosmoEngine\CosmoEngine\Contrib\GLM;A:\CosmoEngine\CosmoEngine\Contrib\ASSIMP\include;A:\CosmoEngine\CosmoEngine\Contrib\irrKlang-1.6.0\include;A:\CosmoEngine\CosmoEngine\Contrib\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;assimp-vc140-mt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>A:/CosmoEngine/CosmoEngine/Contrib/GLEW/lib/Release/Win32;A:/CosmoEngine/CosmoEngine/Contrib/GLEW/lib/Release/Win32/$(Configuration);A:/CosmoEngine/CosmoEngine/Contrib/GLFW/lib-vc2017;A:/CosmoEngine/CosmoEngine/Contrib/GLFW/lib-vc2017/$(Configuration);A:/CosmoEngine/CosmoEngine/Contrib/ASSIMP/lib;A:/CosmoEngine/CosmoEngine/Contrib/ASSIMP/lib/$(Configuration);A:/CosmoEngine/CosmoEngine/Contrib/irrKlang-1.6.0/lib/Win32-visualStudio;A:/CosmoEngine/CosmoEngine/Contrib/irrKlang-1.6.0/lib/Win32-visualStudio/$(Configuration);A:/CosmoEngine/CosmoEngine/Contrib/FreeType/lib;A:/CosmoEngine/CosmoEngine/Contrib/FreeType/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>A:/CosmoEngine/CosmoEngine/CosmoEngine.lib</ImportLibrary>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)\CosmoEngine\Contrib\GLEW\lib\Release\Win32;$(SolutionDir)\CosmoEngine\Contrib\GLFW\lib-vc2017;$(SolutionDir)\CosmoEngine\Contrib\ASSIMP\lib;$(SolutionDir)\CosmoEngine\Contrib\irrKlang-1.6.0\lib\Win32-visualStudio;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDataBaseFile>A:/CosmoEngine/CosmoEngine/CosmoEngine.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
     </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\GameEngine\Skybox.cpp" />
-    <ClCompile Include="src\game\Main.cpp" />
-    <ClCompile Include="src\GameEngine\Shader.cpp" />
-    <ClCompile Include="src\GameEngine\ShadowMap.cpp" />
-    <ClCompile Include="src\GameEngine\SpotLight.cpp" />
-    <ClCompile Include="src\GameEngine\PointLight.cpp" />
-    <ClCompile Include="src\GameEngine\OmniShadowMap.cpp" />
-    <ClCompile Include="src\GameEngine\Model.cpp" />
-    <ClCompile Include="src\GameEngine\Mesh.cpp" />
-    <ClCompile Include="src\GameEngine\Material.cpp" />
-    <ClCompile Include="src\GameEngine\Light.cpp" />
-    <ClCompile Include="src\GameEngine\DirectionalLight.cpp" />
-    <ClCompile Include="src\GameEngine\Camera.cpp" />
-    <ClCompile Include="src\GameEngine\Texture.cpp" />
-    <ClCompile Include="src\GameEngine\Window.cpp" />
+    <CustomBuild Include="A:\CosmoEngine\CosmoEngine\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule A:/CosmoEngine/CosmoEngine/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\CMake\bin\cmake.exe -SA:/CosmoEngine -BA:/CosmoEngine --check-stamp-file A:/CosmoEngine/CosmoEngine/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">A:\CosmoEngine\CMake\Default.cmake;A:\CosmoEngine\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">A:\CosmoEngine\CosmoEngine\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule A:/CosmoEngine/CosmoEngine/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\CMake\bin\cmake.exe -SA:/CosmoEngine -BA:/CosmoEngine --check-stamp-file A:/CosmoEngine/CosmoEngine/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">A:\CosmoEngine\CMake\Default.cmake;A:\CosmoEngine\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">A:\CosmoEngine\CosmoEngine\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\GameEngine\Skybox.h" />
-    <ClInclude Include="src\GameEngine\Shader.h" />
-    <ClInclude Include="src\GameEngine\ShadowMap.h" />
-    <ClInclude Include="src\GameEngine\SpotLight.h" />
-    <ClInclude Include="src\GameEngine\PointLight.h" />
-    <ClInclude Include="src\GameEngine\OmniShadowMap.h" />
-    <ClInclude Include="src\GameEngine\Model.h" />
-    <ClInclude Include="src\GameEngine\Mesh.h" />
-    <ClInclude Include="src\GameEngine\Material.h" />
-    <ClInclude Include="src\GameEngine\Light.h" />
-    <ClInclude Include="src\GameEngine\DirectionalLight.h" />
-    <ClInclude Include="src\GameEngine\Camera.h" />
-    <ClInclude Include="src\GameEngine\CommonValues.h" />
-    <ClInclude Include="src\GameEngine\Texture.h" />
-    <ClInclude Include="src\GameEngine\Window.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Camera.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\CommonValues.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\DirectionalLight.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Light.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Material.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Mesh.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Model.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\OmniShadowMap.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\PointLight.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Shader.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\ShadowMap.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Skybox.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\SpotLight.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Texture.h" />
+    <ClInclude Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Window.h" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\game\Main.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Camera.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\DirectionalLight.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Light.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Material.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Mesh.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Model.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\OmniShadowMap.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\PointLight.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Shader.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\ShadowMap.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Skybox.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\SpotLight.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Texture.cpp" />
+    <ClCompile Include="A:\CosmoEngine\CosmoEngine\src\GameEngine\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="A:\CosmoEngine\ZERO_CHECK.vcxproj">
+      <Project>{817AA152-F9FD-35FE-A55E-C858DB2FEBA3}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CMakePredefinedTargets", "CMakePredefinedTargets", "{4A572340-111D-3DA1-970B-F8B1136876B3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{38A530A0-492A-3629-8AC8-36C90960AFA9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{843B46D2-0903-32D0-BAAC-9E674E063A71} = {843B46D2-0903-32D0-BAAC-9E674E063A71}
+		{13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED} = {13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CosmoEngine", "CosmoEngine\CosmoEngine.vcxproj", "{843B46D2-0903-32D0-BAAC-9E674E063A71}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED} = {13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38A530A0-492A-3629-8AC8-36C90960AFA9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{38A530A0-492A-3629-8AC8-36C90960AFA9}.Release|Win32.ActiveCfg = Release|Win32
+		{843B46D2-0903-32D0-BAAC-9E674E063A71}.Debug|Win32.ActiveCfg = Debug|Win32
+		{843B46D2-0903-32D0-BAAC-9E674E063A71}.Debug|Win32.Build.0 = Debug|Win32
+		{843B46D2-0903-32D0-BAAC-9E674E063A71}.Release|Win32.ActiveCfg = Release|Win32
+		{843B46D2-0903-32D0-BAAC-9E674E063A71}.Release|Win32.Build.0 = Release|Win32
+		{13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED}.Debug|Win32.ActiveCfg = Debug|Win32
+		{13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED}.Debug|Win32.Build.0 = Debug|Win32
+		{13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED}.Release|Win32.ActiveCfg = Release|Win32
+		{13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38A530A0-492A-3629-8AC8-36C90960AFA9} = {4A572340-111D-3DA1-970B-F8B1136876B3}
+		{13CB0CB9-0DFE-3ED3-9A8B-7CAFADD839ED} = {4A572340-111D-3DA1-970B-F8B1136876B3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {131D8B19-CDBE-3B5C-A9AD-8DC71FB283FC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -459,7 +459,7 @@ int main()
 	CreateShaders();
 
 	//Setup starting postions of the camera - Position - pitch/yaw - Camera direction
-	playerCamera = Camera(glm::vec3(0.0f, 10.0f, 15.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, -40.0f, 5.0f, 0.5f);
+	playerCamera = Camera(glm::vec3(-30.0f, 10.0f, -5.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, -40.0f, 5.0f, 0.5f);
 
 	//Texture file locations
 	FloorTex = Texture((char*)"Textures/Floor.png");
