@@ -4,7 +4,7 @@
 /// The Main class contains the main loop for the program 
 ///
 /// This main class brings together all of the components from other  classes to create a game world. 
-#include <iostream>
+
 #include <stdio.h>
 #include <string.h>
 #include <cmath>
@@ -14,9 +14,6 @@
 //Audio System
 #include <conio.h>
 #include <irrKlang.h>
-//FreeType
-#include <ft2build.h>
-#include FT_FREETYPE_H
 
 using namespace irrklang;
 #pragma comment(lib, "irrKlang.lib") // link with irrKlang.dll
@@ -69,9 +66,14 @@ Texture FloorTex;
 //Material
 Material material;
 //Models
-Model CrashedHeli;
+Model Car;
 Model Aircraft;
 Model Hanger;
+//Model matrices
+glm::mat4 FloorMatrix;
+glm::mat4 AircraftMatrix;
+glm::mat4 CarMatrix;
+
 //Skybox
 Skybox skybox;
 
@@ -121,13 +123,11 @@ void CreateShaders()
 ///This function contains all the model information needed to create models to the scene, including what position in the scene they have and the rotation of the model
 void RenderScene()
 {
-	glm::mat4 model(1.0f);
-
 	//Floor Model
-	model = glm::mat4(1.0f);
-	model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
-	model = glm::scale(model, glm::vec3(12.0f, 12.0f, 12.0f));
-	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(model));
+	FloorMatrix = glm::mat4(1.0f);
+	FloorMatrix = glm::translate(FloorMatrix, glm::vec3(0.0f, -2.0f, 0.0f));
+	FloorMatrix = glm::scale(FloorMatrix, glm::vec3(5.0f, 5.0f, 5.0f));
+	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(FloorMatrix));
 	FloorTex.UseTexture();
 	material.UseMaterial(globalSpecularIntensity, globalShininess);
 	meshList[2]->RenderMesh();
@@ -145,34 +145,127 @@ void RenderScene()
 	}
 
 	//Aircraft Model
-	model = glm::mat4(1.0f);
-	model = glm::rotate(model, -AircraftAngle * toRad, glm::vec3(0.0f, 1.0f, 0.0f));
-	model = glm::translate(model, glm::vec3(-60.0f, 40.0f, 10.0f));
-	model = glm::rotate(model, 160.0f * toRad, glm::vec3(0.0f, 0.0f, 1.0f));
-	model = glm::rotate(model, -180.0f * toRad, glm::vec3(1.0f, 0.0f, 0.0f));
-	model = glm::scale(model, glm::vec3(1.5f, 1.5f, 1.5f));
-	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(model));
+	AircraftMatrix = glm::mat4(1.0f);
+	AircraftMatrix = glm::rotate(AircraftMatrix, -AircraftAngle * toRad, glm::vec3(0.0f, 1.0f, 0.0f));
+	AircraftMatrix = glm::translate(AircraftMatrix, glm::vec3(-60.0f, 40.0f, 10.0f));
+	AircraftMatrix = glm::rotate(AircraftMatrix, 160.0f * toRad, glm::vec3(0.0f, 0.0f, 1.0f));
+	AircraftMatrix = glm::rotate(AircraftMatrix, -180.0f * toRad, glm::vec3(1.0f, 0.0f, 0.0f));
+	AircraftMatrix = glm::scale(AircraftMatrix, glm::vec3(1.5f, 1.5f, 1.5f));
+	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(AircraftMatrix));
 	material.UseMaterial(globalSpecularIntensity, globalShininess);
 	Aircraft.RenderModel();
 
 	//Car Model
-	model = glm::mat4(1.0f);
-	model = glm::translate(model, glm::vec3(-41.0f, 1.2f, -10.0f));
-	model = glm::rotate(model, 30.0f, glm::vec3(0.0f, 0.2f, 0.0f));
-	model = glm::scale(model, glm::vec3(1.4f, 1.4f, 1.4f));
-	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(model));
+	CarMatrix = glm::mat4(1.0f);
+	CarMatrix = glm::translate(CarMatrix, glm::vec3(-41.0f, 1.2f, -10.0f));
+	CarMatrix = glm::rotate(CarMatrix, 30.0f, glm::vec3(0.0f, 0.2f, 0.0f));
+	CarMatrix = glm::scale(CarMatrix, glm::vec3(1.4f, 1.4f, 1.4f));
+	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(CarMatrix));
 	material.UseMaterial(globalSpecularIntensity, globalShininess);
-	CrashedHeli.RenderModel();
+	Car.RenderModel();
 
-	//Hanger
+	/*Hanger
 	model = glm::mat4(1.0f);
 	model = glm::translate(model, glm::vec3(0.0001f, -1.9f, 0.0001f));
 	//model = glm::rotate(model, F1Angle * toRad, glm::vec3(0.0f, 0.2f, 0.0f));
 	model = glm::scale(model, glm::vec3(1.5f, 1.5f, 1.5f));
 	glUniformMatrix4fv(globalModel, 1, GL_FALSE, glm::value_ptr(model));
 	material.UseMaterial(globalSpecularIntensity, globalShininess);
-	Hanger.RenderModel();
+	Hanger.RenderModel();*/
 
+}
+
+///Brief desc.
+///
+///This function detects and resolves collisions between the plane and the point
+void collidePlane(glm::mat4 matrix, glm::vec3 planePosition, glm::vec3 planeNormal, float border, glm::vec3& point)
+{
+	// Transform the plane position to world space
+	planePosition = matrix * glm::vec4(planePosition, 1.0f);
+
+	// Transform the plane normal to world space
+	planeNormal = matrix * glm::vec4(planeNormal, 0.0f);
+	planeNormal = glm::normalize(planeNormal);
+
+	// Move the plane along the normal to avoid getting too close
+	planePosition += planeNormal * border;
+
+	// Distance from the point to plane
+	float d = glm::dot(planePosition - point, planeNormal);
+
+	// When the point is inside, move it to the plane
+	if (d > 0)
+		point += planeNormal * d;
+}
+
+///Brief desc.
+///
+///This function detects and resolves collisions between the bounding box and the point
+void collideBox(glm::mat4 matrix, BoundingBox bbox, float border, glm::vec3& point)
+{
+	// Reset the nearest distance to the box boundary and the corresponding correction vector
+	float dmin = 1e10f;
+	glm::vec3 shift(0.0f);
+
+	// Check each side of the bounding box
+	for (int i = 0; i < bbox.GetNumPlanes(); i++)
+	{
+		// Transform the plane position to world space
+		glm::vec3 planePosition = bbox.GetPlanePosition(i);
+		planePosition = matrix * glm::vec4(planePosition, 1.0f);
+
+		// Transform the plane normal to world space
+		glm::vec3 planeNormal = bbox.GetPlaneNormal(i);
+		planeNormal = matrix * glm::vec4(planeNormal, 0.0f);
+		planeNormal = glm::normalize(planeNormal);
+
+		// Move the plane along the normal to avoid getting too close
+		planePosition += planeNormal * border;
+
+		// Distance from the point to plane
+		float d = glm::dot(planePosition - point, planeNormal);
+
+		// When the point is outside, there is no collision
+		if (d <= 0)
+			return;
+
+		// When the point is inside, look for the nearest distance to the box boundary
+		if (d < dmin)
+		{
+			// Update the nearest distance
+			dmin = d;
+
+			// Correction vector for moving to the box boundary
+			shift = planeNormal * dmin;
+		}
+	}
+
+	// Move the point to the nearest boundary
+	point += shift;
+}
+
+///Brief desc.
+///
+///This function detects and resolves collisions between the camera and objects in the scene
+void detectCollisions()
+{
+	// Get camera position
+	glm::vec3 pos = playerCamera.getCameraPos();
+
+	// Minimum allowed distance from the camera to the objects to avoid getting too close
+	const float border = 0.2f;
+
+	// Detect and resolve collisions with the floor
+	glm::vec3 position(0.0f, 0.0f, 0.0f);
+	glm::vec3 normal(0.0f, 1.0f, 0.0f);
+	collidePlane(FloorMatrix, position, normal, border, pos);
+
+	// Detect and resolve collisions with each model
+	collideBox(AircraftMatrix, Aircraft.GetBoundingBox(), border, pos);
+	collideBox(CarMatrix, Car.GetBoundingBox(), border, pos);
+
+	// Update camera position
+	playerCamera.setCameraPos(pos);
 }
 
 void calcAverageNormal(unsigned int * indices, unsigned int indiceCount, GLfloat * vertices, unsigned int verticeCount,
@@ -375,8 +468,8 @@ int main()
 	material = Material(4.0f, 256);
 
 	//Model file locations
-	CrashedHeli = Model();
-	CrashedHeli.LoadModel("Models/Renault12TL.obj");
+	Car = Model();
+	Car.LoadModel("Models/Renault12TL.obj");
 
 	Aircraft = Model();
 	Aircraft.LoadModel("Models/Heli.obj");
@@ -550,6 +643,7 @@ int main()
 
 		playerCamera.keyControl(currentWindow.getsKeys(), keys, updateTime);
 		playerCamera.mouseControl(currentWindow.getXChange(), currentWindow.getYChange());
+		detectCollisions();
 
 		//If key L is pressed toggle spotlight
 		if (currentWindow.getsKeys()[GLFW_KEY_L])

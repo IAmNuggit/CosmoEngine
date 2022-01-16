@@ -63,6 +63,12 @@ glm::vec3 Camera::getCameraPos()
 	return pos;
 }
 
+///Set function which updates position value
+void Camera::setCameraPos(glm::vec3 newPos)
+{
+	pos = newPos;
+}
+
 ///Brief desc.
 ///
 ///Manages key presses (WASD) which moves the camera
