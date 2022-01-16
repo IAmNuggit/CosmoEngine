@@ -139,7 +139,6 @@ void Window::handleKeys(GLFWwindow* window, int key, int code, int action, int m
 		if (action == GLFW_PRESS)
 		{
 			theWindow->keys[key] = true;
-			std::cout << key << std::endl;
 		}
 		else if (action == GLFW_RELEASE)
 		{
