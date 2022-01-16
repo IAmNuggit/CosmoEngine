@@ -49,7 +49,7 @@ using namespace irrklang;
 #include "..\GameEngine\SpotLight.h"
 #include "..\GameEngine\Material.h"
 #include "..\GameEngine\Model.h"
-//#include "..\GameEngine\skyBox.h"
+#include "..\GameEngine\skyBox.h"
 
 
 GLuint globalProjection = 0, globalModel = 0, globalView = 0, globalEyePosition = 0,
@@ -73,7 +73,7 @@ Model CrashedHeli;
 Model Aircraft;
 Model Hanger;
 //Skybox
-//Skybox skybox;
+Skybox skybox;
 
 //Lights
 DirectionalLight sceneLight;
@@ -312,7 +312,7 @@ void RenderPass(glm::mat4 projectionMatrix, glm::mat4 viewMatrix)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//skybox
-	//skybox.drawSkyBox(viewMatrix, projectionMatrix);
+	skybox.drawSkyBox(viewMatrix, projectionMatrix);
 	//Make sure we are using the correct shader
 	shaderList[0].UseShader();
 
@@ -384,7 +384,7 @@ int main()
 	Hanger = Model();
 	Hanger.LoadModel("Models/Map_v1.obj");
 
-	/*std::vector<std::string> skyboxF;
+	std::vector<std::string> skyboxF;
 	skyboxF.push_back("Textures/SkyMap/starfield_rt.tga");
 	skyboxF.push_back("Textures/SkyMap/starfield_lt.tga");
 	skyboxF.push_back("Textures/SkyMap/starfield_up.tga");
@@ -392,7 +392,7 @@ int main()
 	skyboxF.push_back("Textures/SkyMap/starfield_bk.tga");
 	skyboxF.push_back("Textures/SkyMap/starfield_ft.tga");
 
-	skybox = Skybox(skyboxF);*/
+	skybox = Skybox(skyboxF);
 
 
 
