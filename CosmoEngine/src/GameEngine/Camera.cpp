@@ -1,6 +1,6 @@
 #include "Camera.h"
 
-/// The Camera class creates a fly style camera
+/// The Camera class creates a fly style camera l
 ///
 /// The following class creates a camera which allows you to freely move around the scene using both keyboard and mouse inputs.
 /// Features include: Camera movement using WASD, Camera direction controlled by mouse with constraints.
