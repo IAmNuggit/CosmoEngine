@@ -74,7 +74,7 @@ void Camera::setCameraPos(glm::vec3 newPos)
 ///Manages key presses (WASD) which moves the camera
 ///This function is called from Main.cpp and is updated until the mainwindow is closed
 ///@param a Value of key pressed from the user. Is gained from Window::handleKeys()
-///@param b Duration of key press, while key is press continue moving camera
+///@param b Duration of key press, while key is press continue moving camera!
 void Camera::keyControl(bool* keys, bool* keysJoy, GLfloat updateTime)
 {
 	GLfloat velocity = (moveS * updateTime) * 3;
