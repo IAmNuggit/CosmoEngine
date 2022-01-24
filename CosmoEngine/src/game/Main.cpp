@@ -105,7 +105,7 @@ static const char* fragmentShader = "Shaders/shader.frag";
 
 ///Brief desc.
 ///
-///This function contains omni and directional fragment and vertex shader file locations 
+///This function contains omni and directional fragment and vertex shader file locations.
 void CreateShaders()
 {
 	Shader *shadermain = new Shader();
