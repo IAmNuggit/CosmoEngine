@@ -3,7 +3,7 @@
 
 /// The Main class contains the main loop for the program 
 ///
-/// This main class brings together all of the components from other  classes to create a game world
+/// This main class brings together all of the components from other  classes to create a game world.
 
 #include <stdio.h>
 #include <string.h>
